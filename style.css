@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ===========================
+   Background
+=========================== */
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+    position:relative;
+    background:linear-gradient(135deg,#050505,#111111,#1b1b1b,#000000);
+}
+
+/* ✨ Sparkles */
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+        radial-gradient(circle,#ffffff 2px,transparent 2px),
+        radial-gradient(circle,#ffd700 2px,transparent 3px),
+        radial-gradient(circle,#ffffff 1px,transparent 2px),
+        radial-gradient(circle,#d8b4ff 2px,transparent 3px);
+
+    background-size:
+        170px 170px,
+        250px 250px,
+        150px 150px,
+        280px 280px;
+
+    animation:twinkle 5s infinite alternate;
+    opacity:.7;
+    pointer-events:none;
+}
+
+/* ✨ Floating Glitter */
+body::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+        radial-gradient(circle,#ffffff 2px,transparent 3px),
+        radial-gradient(circle,#ffd700 2px,transparent 3px),
+        radial-gradient(circle,#ffffff 1px,transparent 2px);
+
+    background-size:
+        220px 220px,
+        300px 300px,
+        170px 170px;
+
+    animation:floatStars 18s linear infinite;
+    opacity:.45;
+    pointer-events:none;
+}
+
+@keyframes twinkle{
+
+0%{
+opacity:.25;
+transform:scale(1);
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+opacity:.4;
+transform:scale(1.08);
+}
+
+}
+
+@keyframes floatStars{
+
+from{
+transform:translateY(80px);
+}
+
+to{
+transform:translateY(-120px);
+}
+
+}
+
+/* ===========================
+   Card
+=========================== */
+
+.container{
+
+width:410px;
+padding:35px;
+border-radius:22px;
+text-align:center;
+
+background:rgba(18,18,18,.88);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+0 0 30px rgba(180,0,255,.25),
+0 0 60px rgba(0,0,0,.8);
+
+z-index:5;
+
+animation:cardFloat 3s ease-in-out infinite;
+
+}
+
+@keyframes cardFloat{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-6px);
+}
+
+}
+
+/* ===========================
+   Text
+=========================== */
+
+h1{
+
+color:#ffffff;
+font-size:32px;
+margin-bottom:15px;
+text-shadow:0 0 12px #c44dff;
+
+}
+
+p{
+
+color:#d6d6d6;
+margin-bottom:20px;
+font-size:17px;
+
+}
+
+/* ===========================
+   Input
+=========================== */
+
+input{
+
+width:100%;
+padding:14px;
+
+background:#202020;
+
+color:white;
+
+border:2px solid #8a2be2;
+
+border-radius:14px;
+
+font-size:18px;
+
+text-align:center;
+
+outline:none;
+
+margin-bottom:20px;
+
+transition:.3s;
+
+}
+
+input::placeholder{
+
+color:#aaaaaa;
+
+}
+
+input:focus{
+
+border-color:#d400ff;
+
+box-shadow:0 0 20px #b84dff;
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+button{
+
+width:100%;
+padding:14px;
+
+border:none;
+
+border-radius:14px;
+
+background:linear-gradient(90deg,#8a2be2,#c44dff);
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.04);
+
+box-shadow:0 0 20px #c44dff;
+
+}
+
+button:active{
+
+transform:scale(.97);
+
+}
+
+.restart{
+
+margin-top:18px;
+
+background:linear-gradient(90deg,#444,#777);
+
+}
+
+.restart:hover{
+
+box-shadow:0 0 20px #ffffff55;
+
+}
+
+/* ===========================
+   Result
+=========================== */
+
+#message{
+
+margin-top:20px;
+
+font-size:24px;
+
+font-weight:bold;
+
+}
+
+#attempts{
+
+margin-top:10px;
+
+font-size:18px;
+
+color:#dddddd;
+
+}
